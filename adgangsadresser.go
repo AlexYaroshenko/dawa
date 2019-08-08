@@ -20,6 +20,8 @@ type AdgangsAdresse struct {
 	Ejerlav           Ejerlav             `json:"ejerlav"`           // Det matrikulære ejerlav som adressen ligger i.
 	EsrEjendomsNr     string              `json:"esrejendomsnr"`     // ESR Ejendomsnummer. Indtil 7 cifre.
 	Historik          Historik            `json:"historik"`          // Væsentlige tidspunkter for adgangsadressen
+	Etage             string              `json:"etage"`             // etage
+	Door              string              `json:"dør"`               // dør
 	Href              string              `json:"href"`              // Adgangsadressens URL.
 	Husnr             string              `json:"husnr"`             // Husnummer. Max 4 cifre eventuelt med et efterfølgende bogstav.
 	ID                string              `json:"id"`                // Adgangsadressens unikke id, f.eks. 0a3f5095-45ec-32b8-e044-0003ba298018
@@ -259,6 +261,8 @@ func ImportAdgangsAdresserCSV(in io.Reader) (*AdgangsAdresseIter, error) {
 			a.Vejstykke.Kode = v["vejkode"]
 			a.Vejstykke.Navn = v["vejnavn"]
 			a.Husnr = v["husnr"]
+			a.Etage = v["etage"]
+			a.Door = v["dør"]
 			a.SupplerendeBynavn = v["supplerendebynavn"]
 			a.Postnummer.Nr = v["postnr"]
 			a.Postnummer.Navn = v["postnrnavn"]
