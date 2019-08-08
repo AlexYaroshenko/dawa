@@ -43,6 +43,7 @@ type AdgangsAdresse struct {
 }
 
 type AutocompleteAddress struct {
+	ID         string `json:"id"`
 	Street     string `json:"vejnavn"`
 	Husnr      string `json:"husnr"`
 	PostNumber string `json:"postnr"`
