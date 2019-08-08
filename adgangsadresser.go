@@ -39,15 +39,17 @@ type AdgangsAdresse struct {
 
 	// Fields returned in autocomplete
 	Text                string `json:"tekst"`
-	AutocompleteAddress `json:"adgangsadresse"`
+	AutocompleteAddress `json:"data"`
 }
 
 type AutocompleteAddress struct {
-	ID         string `json:"id"`
-	Street     string `json:"vejnavn"`
-	Husnr      string `json:"husnr"`
-	PostNumber string `json:"postnr"`
-	PostName   string `json:"postnrnavn"`
+	ID         string  `json:"id"`
+	Street     string  `json:"vejnavn"`
+	Husnr      string  `json:"husnr"`
+	PostNumber string  `json:"postnr"`
+	PostName   string  `json:"postnrnavn"`
+	Floor      *string `json:"etage"`
+	Door       *string `json:"dør"`
 }
 
 // Adressens placering i Det Danske Kvadratnet (DDKN).
