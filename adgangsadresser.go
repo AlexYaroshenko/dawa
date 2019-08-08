@@ -41,6 +41,7 @@ type AdgangsAdresse struct {
 
 	// Fields returned in autocomplete
 	Text                string `json:"tekst"`
+	Type                string `json:"type"`
 	AutocompleteAddress `json:"data"`
 }
 
